@@ -31,7 +31,21 @@ def rainbow_deterministic(text: str, shift: int, testing=False) -> None:
 # "Function 2"
 @colorsafe
 def word_deterministic(text: str, shift: int, testing=False) -> None:
-    pass
+    wordlist = text.split(" ")
+    for word in wordlist:
+        value = (sum(values[char] for char in word if char in values) + shift) % 16
+        determined_color = colors[value]
+
+        if determined_color == "black":
+            colored_word = termcolor.colored(word, "black", "on_white")
+        else:
+            colored_word = termcolor.colored(word, determined_color)
+        if wordlist[-1] != word:
+            print(colored_word, end=' ')
+        else:
+            print(colored_word, end='')
+        if testing:
+            printerr(f"{word},{determined_color}")
 
 # "Function 3"
 @colorsafe
