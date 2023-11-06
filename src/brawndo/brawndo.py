@@ -26,7 +26,25 @@ def colorsafe(func):
 # "Function 1"
 @colorsafe
 def rainbow_deterministic(text: str, shift: int, testing=False) -> None:
-    pass
+    for char in text:
+        if char in values:
+            color_value = (values[char] + shift) % 16
+            color_name = colors[color_value]
+
+            if color_name == 'black':
+                colored_char = termcolor.colored(char, on_color='on_white')
+            else:
+                colored_char = termcolor.colored(char, color_name)
+
+            if testing:
+                printerr(f"{char},{color_name}")
+            else:
+                print(colored_char, end='')
+        else:
+            if testing:
+                printerr(f"{char},none")
+            else:
+                print(char, end='')
 
 # "Function 2"
 @colorsafe
