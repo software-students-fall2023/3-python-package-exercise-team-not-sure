@@ -36,7 +36,19 @@ def word_deterministic(text: str, shift: int, testing=False) -> None:
 # "Function 3"
 @colorsafe
 def rainbow_random(text: str, rndseed=None, testing=False) -> None:
-    pass
+    if rndseed is not None and isinstance(rndseed, int):
+        seed(rndseed)
+    for char in text:
+        random_value = randval()
+        ref_color = colors[random_value]
+        if char == "black":
+            colored_char = termcolor.colored(char, "black", "on_white")
+        else:
+            colored_char = termcolor.colored(char, ref_color)
+        if testing:
+            printerr(f"{char},{ref_color}")
+        else:
+            termcolor.cprint(char, ref_color)
 
 # "Function 4"
 @colorsafe
