@@ -28,14 +28,17 @@ def colorsafe(func):
 def rainbow_deterministic(text: str, shift: int, testing=False) -> None:
     pass
 
+# "Function 2"
 @colorsafe
 def word_deterministic(text: str, shift: int, testing=False) -> None:
     pass
 
+# "Function 3"
 @colorsafe
 def rainbow_random(text: str, rndseed=None, testing=False) -> None:
     pass
 
+# "Function 4"
 @colorsafe
 def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=False) -> None:
     pass
