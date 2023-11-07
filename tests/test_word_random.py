@@ -38,7 +38,7 @@ desireds = [
 params = zip(texts, shifts, desireds)
 
 
-@pytest.mark.parametrize("text,modes,rndseed,desired", params)
+@pytest.mark.parametrize("text,mode,rndseed,desired", params)
 def test_word_random(text, mode, rndseed, desired):
     test_vector = word_random(text, mode, rndseed, testing=True)
     assert test_vector == desired
