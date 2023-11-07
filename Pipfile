@@ -9,6 +9,7 @@ pytest = "*"
 twine = "*"
 termcolor = "*"
 colorama = "*"
+nltk = "*"
 
 [dev-packages]
 
