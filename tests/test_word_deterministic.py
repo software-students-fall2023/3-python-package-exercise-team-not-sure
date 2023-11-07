@@ -21,6 +21,6 @@ desireds = [
 params = zip(texts, shifts, desireds)
 
 @pytest.mark.parametrize("text,shift,desired", params)
-def test_rainbow_deterministic(text, shift, desired):
+def test_word_deterministic(text, shift, desired):
     test_vector = word_deterministic(text, shift, testing=True)
     assert test_vector == desired

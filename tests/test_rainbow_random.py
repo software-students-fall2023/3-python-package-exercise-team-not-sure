@@ -1,4 +1,4 @@
-from brawndo.brawndo import word_deterministic
+from brawndo.brawndo import rainbow_random
 
 from io import StringIO
 import sys
@@ -22,9 +22,9 @@ desireds = [
 ]
 
 # Zip all together
-params = zip(texts, shifts, desireds)
+params = zip(texts, rngseeds, desireds)
 
-@pytest.mark.parametrize("text,shift,desired", params)
-def test_rainbow_deterministic(text, shift, desired):
-    test_vector = word_deterministic(text, shift, testing=True)
+@pytest.mark.parametrize("text,rngseed,desired", params)
+def test_rainbow_random(text, rndseed, desired):
+    test_vector = rainbow_random(text, rndseed, testing=True)
     assert test_vector == desired
