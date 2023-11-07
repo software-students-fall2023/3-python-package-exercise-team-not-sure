@@ -1,8 +1,4 @@
 from brawndo.brawndo import rainbow_random
-
-from io import StringIO
-import sys
-from contextlib import redirect_stderr
 import pytest
 
 texts = [
