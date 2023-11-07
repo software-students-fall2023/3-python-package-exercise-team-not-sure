@@ -8,9 +8,9 @@ texts = [
 ]
 shifts = [0, 1, 2]
 desireds = [
-    "The,14\nbe,5\nto,1\nof,3\nand,0\n",
-    "a,1\nin,7\nthat,1\nhave,4\nI,9\n",
-    "it,15\nfor,10\nnot,4\non,15\nwith.,15\n",
+    "The,light_magenta\nbe,magenta\nto,red\nof,yellow\nand,black\n",
+    "a,red\nin,cyan\nthat,light_magenta\nhave,red\nI,dark_grey\n",
+    "it,light_blue\nfor,cyan\nnot,black\non,light_blue\nwith.,white\n",
 ]
 
 # Zip all together
