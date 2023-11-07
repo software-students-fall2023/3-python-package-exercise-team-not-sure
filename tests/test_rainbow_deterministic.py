@@ -5,8 +5,6 @@ import sys
 from contextlib import redirect_stderr
 import pytest
 
-from typing import Optional
-
 texts = [
     "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",
     "The quick brown fox jumps over the lazy dog.",

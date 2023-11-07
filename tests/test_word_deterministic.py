@@ -5,8 +5,6 @@ import sys
 from contextlib import redirect_stderr
 import pytest
 
-from typing import Optional
-
 texts = [
     "The be to of and",
     "a in that have I",
