@@ -1,17 +1,21 @@
 import termcolor
 import colorama
+
 colorama.init()
 colorama.deinit()
 
 from typing import Optional
 
 import sys
+
 printerr = lambda x: print(x, file=sys.stderr)
 
 from random import randint, seed
-randval = lambda _ : randint(0,15)
+
+randval = lambda _: randint(0, 15)
 
 from brawndo.constants import *
+
 
 def colorsafe(func):
     def wrapper(*args, **kwargs):
@@ -24,7 +28,9 @@ def colorsafe(func):
             exit(1)
         colorama.deinit()
         return retval
+
     return wrapper
+
 
 # "Function 1"
 @colorsafe
@@ -34,10 +40,10 @@ def rainbow_deterministic(text: str, shift: int, testing=False) -> Optional[str]
         if char in values:
             color_value = (values[char] + shift) % 16
             color_name = colors[color_value]
-            if color_name == 'black':
-                colored_char = termcolor.cprint(char, "black", 'on_white', end='')
+            if color_name == "black":
+                colored_char = termcolor.cprint(char, "black", "on_white", end="")
             else:
-                colored_char = termcolor.cprint(char, color_name, end='')
+                colored_char = termcolor.cprint(char, color_name, end="")
             if testing:
                 test_vector.append(f"{char},{color_name}")
         else:
@@ -51,17 +57,44 @@ def rainbow_deterministic(text: str, shift: int, testing=False) -> Optional[str]
     else:
         return None
 
+
 # "Function 2"
 @colorsafe
-def word_deterministic(text: str, shift: int, testing=False) -> None:
-    pass
+def word_deterministic(text: str, shift: int, testing=False) -> Optional[str]:
+    wordlist = text.split(" ")
+    test_vector = []
+    for word in wordlist:
+        value = (sum(values[char] for char in word if char in values) + shift) % 16
+        determined_color = colors[value]
+
+        if determined_color == "black":
+            colored_word = termcolor.colored(word, "black", "on_white")
+        else:
+            colored_word = termcolor.colored(word, determined_color)
+        if wordlist[-1] != word:
+            print(colored_word, end=" ")
+        else:
+            print(colored_word, end="")
+        if testing:
+            test_vector.append(f"{word},{determined_color}")
+    if testing:
+        retval = "\n".join(test_vector)
+        if retval[-1] != "\n":
+            retval += "\n"
+        return retval
+    else:
+        return None
+
 
 # "Function 3"
 @colorsafe
 def rainbow_random(text: str, rndseed=None, testing=False) -> None:
     pass
 
+
 # "Function 4"
 @colorsafe
-def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=False) -> None:
+def word_random(
+    text: str, operate_on_sentences: bool, rndseed=None, testing=False
+) -> None:
     pass
