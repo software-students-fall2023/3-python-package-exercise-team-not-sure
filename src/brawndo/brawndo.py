@@ -11,8 +11,7 @@ import sys
 printerr = lambda x: print(x, file=sys.stderr)
 
 from random import randint, seed
-
-randval = lambda _: randint(0, 15)
+randval = lambda: randint(0, 15)
 
 from brawndo.constants import *
 
@@ -41,9 +40,9 @@ def rainbow_deterministic(text: str, shift: int, testing=False) -> Optional[str]
             color_value = (values[char] + shift) % 16
             color_name = colors[color_value]
             if color_name == "black":
-                colored_char = termcolor.cprint(char, "black", "on_white", end="")
+                termcolor.cprint(char, "black", "on_white", end="")
             else:
-                colored_char = termcolor.cprint(char, color_name, end="")
+                termcolor.cprint(char, color_name, end="")
             if testing:
                 test_vector.append(f"{char},{color_name}")
         else:
@@ -88,7 +87,8 @@ def word_deterministic(text: str, shift: int, testing=False) -> Optional[str]:
 
 # "Function 3"
 @colorsafe
-def rainbow_random(text: str, rndseed=None, testing=False) -> None:
+def rainbow_random(text: str, rndseed=None, testing=False) -> Optional[str]:
+    test_vector = []
     if rndseed is not None and isinstance(rndseed, int):
         seed(rndseed)
     for char in text:
@@ -99,9 +99,15 @@ def rainbow_random(text: str, rndseed=None, testing=False) -> None:
         else:
             colored_char = termcolor.colored(char, ref_color)
         if testing:
-            printerr(f"{char},{ref_color}")
-        else:
-            termcolor.cprint(char, ref_color)
+            test_vector.append(f"{char},{ref_color}")
+        print(colored_char, end="")
+    if testing:
+        retval = "\n".join(test_vector)
+        if retval[-1] != "\n":
+            retval += "\n"
+        return retval
+    else:
+        return None
 
 
 # "Function 4"

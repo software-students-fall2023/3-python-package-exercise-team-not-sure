@@ -13,9 +13,9 @@ rndseeds = [
 ]
 
 desireds = [
-    "T,0\nh,12\ne,14\n ,7\nq,6\nu,10\ni,13\nc,8\nk,15\n ,0\nb,8\nr,14\no,3\nw,6\nn,11\n ,8\nf,14\no,3\nx,13\n ,2\nj,6\nu,7\nm,2\np,8\ns,15\n ,2\no,4\nv,7\ne,15\nr,13\n ,14\nt,3\nh,5\ne,9\n ,15\nl,8\na,14\nz,4\ny,0\n ,2\nd,1\no,8\ng,0\n.,13\n",
-    "',0\na,0\ns,15\n.,12\n.,13\n[,9\np,0\no,12\na,2\nv,12\ne,5\ns,0\nf,2\n[,13\n ,12\n ,4\n8,9\na,10\n7,6\n*,6\n.,5\nf,11\n\",11\n],3\n",
-    "!,10\n@,13\n#,13\n$,3\n%,0\n^,13\n&,11\n*,3\n(,2\n),8\n-,3\n=,8\n_,14\n+,8\n",
+    "T,black\nh,light_yellow\ne,light_magenta\n ,white\nq,cyan\nu,light_red\ni,light_blue\nc,light_grey\nk,light_cyan\n ,black\nb,light_grey\nr,light_magenta\no,yellow\nw,cyan\nn,light_green\n ,light_grey\nf,light_magenta\no,yellow\nx,light_blue\n ,green\nj,cyan\nu,white\nm,green\np,light_grey\ns,light_cyan\n ,green\no,blue\nv,white\ne,light_cyan\nr,light_blue\n ,light_magenta\nt,yellow\nh,magenta\ne,dark_grey\n ,light_cyan\nl,light_grey\na,light_magenta\nz,blue\ny,black\n ,green\nd,red\no,light_grey\ng,black\n.,light_blue\n",
+    "',black\na,black\ns,light_cyan\n.,light_yellow\n.,light_blue\n[,dark_grey\np,black\no,light_yellow\na,green\nv,light_yellow\ne,magenta\ns,black\nf,green\n[,light_blue\n ,light_yellow\n ,blue\n8,dark_grey\na,light_red\n7,cyan\n*,cyan\n.,magenta\nf,light_green\n\",light_green\n],yellow\n",
+    "!,light_red\n@,light_blue\n#,light_blue\n$,yellow\n%,black\n^,light_blue\n&,light_green\n*,yellow\n(,green\n),light_grey\n-,yellow\n=,light_grey\n_,light_magenta\n+,light_grey\n",
 ]
 
 # Zip all together
