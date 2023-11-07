@@ -112,7 +112,5 @@ def rainbow_random(text: str, rndseed=None, testing=False) -> Optional[str]:
 
 # "Function 4"
 @colorsafe
-def word_random(
-    text: str, operate_on_sentences: bool, rndseed=None, testing=False
-) -> None:
+def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=False) -> None:
     pass
