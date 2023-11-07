@@ -19,10 +19,10 @@ desireds = [
 ]
 
 # Zip all together
-params = zip(texts, rngseeds, desireds)
+params = zip(texts, rndseeds, desireds)
 
 
-@pytest.mark.parametrize("text,rngseed,desired", params)
+@pytest.mark.parametrize("text,rndseed,desired", params)
 def test_rainbow_random(text, rndseed, desired):
     test_vector = rainbow_random(text, rndseed, testing=True)
     assert test_vector == desired

@@ -31,11 +31,11 @@ desireds = [
     "it,light_cyan\nfor,light_blue\nnot,dark_grey\non,light_cyan\nwith.,light_green\n",
     "The sun sets in the west.,magenta\nAutumn leaves are falling down.,magenta\nNight has come; it's time to rest.,red\n",
     "Can you believe she said that?!,light_magenta\nWhat on earth is happening here?!,yellow\nAre you kidding me right now?,blue\n!,light_blue\n",
-    "Yes, I will be there before noon.,light_cyan\nThe cat, though small, was a fierce hunter.,black\nHe said, "Wait, I need to tell you something important.",dark_grey\n",
+    "Yes, I will be there before noon.,light_cyan\nThe cat, though small, was a fierce hunter.,black\nHe said, \"Wait, I need to tell you something important.\",dark_grey\n",
 ]
 
 # Zip all together
-params = zip(texts, shifts, desireds)
+params = zip(texts, modes, rndseeds, desireds)
 
 
 @pytest.mark.parametrize("text,mode,rndseed,desired", params)

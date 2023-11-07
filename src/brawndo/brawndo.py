@@ -9,7 +9,7 @@ printerr = lambda x: sys.stderr.write(x+"\n")
 from random import randint, seed
 randval = lambda _ : randint(0,15)
 
-from constants import *
+from brawndo.constants import *
 
 def colorsafe(func):
     def wrapper(*args, **kwargs):
