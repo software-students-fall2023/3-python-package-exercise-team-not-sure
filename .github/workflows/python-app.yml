@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5  # This line sets the timeout to 5 minutes
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
 
