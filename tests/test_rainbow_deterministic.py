@@ -1,5 +1,3 @@
-# We are in the /tests folder, and we need to import the function in the file src/brawndo/brawndo.py, called rainbow_deterministic.
-# Perform the import:
 from brawndo.brawndo import rainbow_deterministic
 
 from io import StringIO
