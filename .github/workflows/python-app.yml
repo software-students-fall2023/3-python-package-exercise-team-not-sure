@@ -30,8 +30,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install pipenv
-        pipenv install --dev
+          python -m pip install --upgrade pip
+          pip install --user pipenv
+          pipenv --python ${{ matrix.python-version }}
+          pipenv install pytest
+          pipenv install
 
     - name: Test with pytest
       run: |
