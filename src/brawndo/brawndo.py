@@ -66,7 +66,7 @@ def rainbow_deterministic(text: str, shift: int, testing=False) -> Optional[str]
 def word_deterministic(text: str, shift: int, testing=False) -> Optional[str]:
     wordlist = text.split(" ")
     test_vector = []
-    for word in wordlist:
+    for word in wordlist[:-1]:
         value = (sum(values[char] for char in word if char in values) + shift) % 16
         determined_color = colors[value]
 
@@ -74,13 +74,18 @@ def word_deterministic(text: str, shift: int, testing=False) -> Optional[str]:
             colored_word = termcolor.colored(word, "black", "on_white")
         else:
             colored_word = termcolor.colored(word, determined_color)
-        if wordlist[-1] != word:
             print(colored_word, end=" ")
-        else:
-            print(colored_word, end="")
         if testing:
             test_vector.append(f"{word},{determined_color}")
+    value = (sum(values[char] for char in wordlist[-1] if char in values) + shift) % 16
+    determined_color = colors[value]
+    if determined_color == "black":
+        colored_word = termcolor.colored(wordlist[-1], "black", "on_white")
+    else:
+        colored_word = termcolor.colored(wordlist[-1], determined_color)
+    print(colored_word, end="")
     if testing:
+        test_vector.append(f"{wordlist[-1]},{determined_color}")
         retval = "\n".join(test_vector)
         if retval[-1] != "\n":
             retval += "\n"
@@ -142,7 +147,6 @@ def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=Fal
     print(colored_token, end="")
     if testing:
         test_vector.append(f"{tokens[-1]},{ref_color}")
-    if testing:
         retval = "\n".join(test_vector)
         if retval[-1] != "\n":
             retval += "\n"
