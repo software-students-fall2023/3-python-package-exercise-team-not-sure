@@ -1,7 +1,7 @@
 # Brawndo
 [![build](https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure/actions/workflows/python-app.yml/badge.svg)](https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure/actions/workflows/python-app.yml)
 
-![It's Got Electrolytes!](https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure/blob/main/images/cover.png)
+![It's Got Electrolytes!](https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure/blob/main/images/cover.png?raw=true)
 
 ### Makes your terminal text chaotic. It's got what plants crave!
 
@@ -15,7 +15,7 @@ See on [PyPI](https://pypi.org/project/brawndo/)
 First, set up the environment:  
 `cd .../3-python-package-exercise-team-not-sure`
 
-![](https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure/blob/main/images/not_sure.jpg)
+![](https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure/blob/main/images/not_sure.jpg?raw=true)
 
 Enter the pipenv:  
 `pipenv shell`
