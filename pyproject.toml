@@ -1,13 +1,13 @@
 [project]
 name = "Brawndo"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
     { name="Michael Lin", email="mal9608@nyu.edu" },
     { name="Seolin Jung", email="sj3182@nyu.edu" },
     { name="Marwan AbdElhameed", email="mwa7459@nyu.edu" },
     { name="Pavly Halim", email="poh2005@nyu.edu" }
 ]
-description = "A cute little uwu package to brighten your day with randomised colours on your terminal screen!"
+description = "Makes your terminal text chaotic. It's got what plants crave!"
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
