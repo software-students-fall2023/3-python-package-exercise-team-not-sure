@@ -98,7 +98,7 @@ def rainbow_random(text: str, rndseed=None, testing=False) -> Optional[str]:
     for char in text:
         random_value = randval()
         ref_color = colors[random_value]
-        if char == "black":
+        if ref_color == "black":
             colored_char = termcolor.colored(char, "black", "on_white")
         else:
             colored_char = termcolor.colored(char, ref_color)
