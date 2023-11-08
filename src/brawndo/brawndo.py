@@ -125,7 +125,7 @@ def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=Fal
         tokens = text.split(" ")
     if rndseed is not None and isinstance(rndseed, int):
         seed(rndseed)
-    for token in tokens:
+    for token in tokens[:-1]:
         ref_color = colors[randval()]
         if ref_color == "black":
             colored_token = termcolor.colored(token, "black", "on_white")
@@ -133,10 +133,15 @@ def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=Fal
             colored_token = termcolor.colored(token, ref_color)
         if testing:
             test_vector.append(f"{token},{ref_color}")
-        if tokens[-1] != token:
-            print(colored_token, end=" ")
-        else:
-            print(colored_token, end="")
+        print(colored_token, end=" ")
+    ref_color = colors[randval()]
+    if ref_color == "black":
+        colored_token = termcolor.colored(tokens[-1], "black", "on_white")
+    else:
+        colored_token = termcolor.colored(tokens[-1], ref_color)
+    print(colored_token, end="")
+    if testing:
+        test_vector.append(f"{tokens[-1]},{ref_color}")
     if testing:
         retval = "\n".join(test_vector)
         if retval[-1] != "\n":
