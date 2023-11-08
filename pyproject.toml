@@ -23,8 +23,6 @@ twine = "*"
 termcolor = "*"
 colorama = "*"
 nltk = "*"
-setuptools = "*"
-wheel = "*"
 
 
 [project.urls]
