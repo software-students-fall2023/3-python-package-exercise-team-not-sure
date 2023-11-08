@@ -30,6 +30,8 @@ You can then use `twine upload dist/*` to upload to PyPI.
 
 ## Functions
 
+Import with `from brawndo.brawndo import *`.
+
 `rainbow_deterministic(text: str, shift: int, testing=False) -> Optional[str]`
 
 - Prints out colors for each character in your `text`, making the same characters the same color.
