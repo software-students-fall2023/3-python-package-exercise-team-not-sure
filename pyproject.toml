@@ -1,6 +1,6 @@
 [project]
 name = "Brawndo"
-version = "0.0.2"
+version = "0.0.4"
 authors = [
     { name="Michael Lin", email="mal9608@nyu.edu" },
     { name="Seolin Jung", email="sj3182@nyu.edu" },

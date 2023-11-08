@@ -127,7 +127,7 @@ def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=Fal
         seed(rndseed)
     for token in tokens:
         ref_color = colors[randval()]
-        if token == "black":
+        if ref_color == "black":
             colored_token = termcolor.colored(token, "black", "on_white")
         else:
             colored_token = termcolor.colored(token, ref_color)
