@@ -1,12 +1,16 @@
 import termcolor
-import colorama
 
+import colorama
 colorama.init()
 colorama.deinit()
 
 from typing import Optional
 
 import sys
+
+# For sentence tokenization
+import nltk
+nltk.download("punkt", quiet=True)
 
 printerr = lambda x: print(x, file=sys.stderr)
 
@@ -112,7 +116,31 @@ def rainbow_random(text: str, rndseed=None, testing=False) -> Optional[str]:
 
 # "Function 4"
 @colorsafe
-def word_random(
-    text: str, operate_on_sentences: bool, rndseed=None, testing=False
-) -> None:
-    pass
+def word_random(text: str, operate_on_sentences: bool, rndseed=None, testing=False) -> None:
+    tokens = None
+    test_vector = []
+    if operate_on_sentences:
+        tokens = nltk.sent_tokenize(text)
+    else:
+        tokens = text.split(" ")
+    if rndseed is not None and isinstance(rndseed, int):
+        seed(rndseed)
+    for token in tokens:
+        ref_color = colors[randval()]
+        if token == "black":
+            colored_token = termcolor.colored(token, "black", "on_white")
+        else:
+            colored_token = termcolor.colored(token, ref_color)
+        if testing:
+            test_vector.append(f"{token},{ref_color}")
+        if tokens[-1] != token:
+            print(colored_token, end=" ")
+        else:
+            print(colored_token, end="")
+    if testing:
+        retval = "\n".join(test_vector)
+        if retval[-1] != "\n":
+            retval += "\n"
+        return retval
+    else:
+        return None
