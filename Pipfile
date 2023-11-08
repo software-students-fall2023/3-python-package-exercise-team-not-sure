@@ -10,8 +10,6 @@ twine = "*"
 termcolor = "*"
 colorama = "*"
 nltk = "*"
-setuptools = "*"
-wheel = "*"
 
 [dev-packages]
 

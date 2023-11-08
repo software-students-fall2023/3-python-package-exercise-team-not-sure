@@ -16,6 +16,17 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.dependencies]
+build = "*"
+pytest = "*"
+twine = "*"
+termcolor = "*"
+colorama = "*"
+nltk = "*"
+setuptools = "*"
+wheel = "*"
+
+
 [project.urls]
 "Homepage" = "https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure"
 "Repository" = "https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure.git"
