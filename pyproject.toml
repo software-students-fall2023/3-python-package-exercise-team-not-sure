@@ -1,2 +1,25 @@
+[project]
+name = "Brawndo"
+version = "0.0.2"
+authors = [
+    { name="Michael Lin", email="mal9608@nyu.edu" },
+    { name="Seolin Jung", email="sj3182@nyu.edu" },
+    { name="Marwan AbdElhameed", email="mwa7459@nyu.edu" },
+    { name="Pavly Halim", email="poh2005@nyu.edu" }
+]
+description = "A cute little uwu package to brighten your day with randomised colours on your terminal screen!"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure"
+"Repository" = "https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure.git"
+"Bug Tracker" = "https://github.com/software-students-fall2023/3-python-package-exercise-team-not-sure/issues"
+
 [tool.pytest.ini_options]
 pythonpath = ["src", "tests"]
